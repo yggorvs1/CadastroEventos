@@ -1,0 +1,32 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CadastroEventos.ResumoPage">
+
+    <StackLayout Padding="20">
+        
+        <Label Text="Resumo do Evento" 
+               FontSize="Large"
+               HorizontalOptions="Center" />
+
+        <Label x:Name="NomeEventoLabel" />
+        
+        <Label x:Name="DataInicioLabel" />
+        
+        <Label x:Name="DataTerminoLabel" />
+        
+        <Label x:Name="NumeroParticipantesLabel" />
+        
+        <Label x:Name="LocalEventoLabel" />
+        
+        <Label x:Name="CustoPorParticipanteLabel" />
+        
+        <Label x:Name="DuracaoLabel" />
+
+        <Label x:Name="CustoTotalLabel" />
+
+        <Button Text="Voltar"
+                Clicked="OnVoltarClicked" />
+            
+    </StackLayout>
+        
+</ContentPage>

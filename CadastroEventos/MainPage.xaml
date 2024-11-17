@@ -1,0 +1,119 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:CadastroEventos"
+             x:Class="CadastroEventos.MainPage">
+
+    <ContentPage.BindingContext>
+
+        <local:Evento>
+            
+        </local:Evento>
+        
+    </ContentPage.BindingContext>
+
+    <StackLayout Padding="20">
+
+        <Frame Padding="10">
+
+            <VerticalStackLayout Padding="10"
+                                 Spacing="10">
+        
+                <Label Text="Cadastro de Eventos" 
+                       FontSize="Large" 
+                       HorizontalOptions="Center"
+                       TextColor="{StaticResource PrimaryDark}"/>
+        
+                <Entry Text="{Binding Nome}" 
+                       Placeholder="Digite o Nome do Evento" />
+
+            </VerticalStackLayout>
+
+        </Frame>
+
+        <Frame Padding="10">
+
+            <VerticalStackLayout Padding="10"
+                                 Spacing="10">
+
+                <Label Text="Selecione as Datas do evento"
+                       FontSize="Subtitle"
+                       TextColor="{StaticResource PrimaryDark}"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"/>
+
+                <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+
+                    <Label Text="Data de Inicio"
+                           TextColor="{StaticResource PrimaryDark}"/>
+
+                    <DatePicker Date="{Binding DataInicio}" 
+                                Format="dd/MM/yyyy" 
+                                x:Name="dtpck_inicio" />
+
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+
+                    <Label Text="Data do Fim"
+                           TextColor="{StaticResource PrimaryDark}"/>
+
+                    <DatePicker Date="{Binding DataTermino}" 
+                                Format="dd/MM/yyyy" 
+                                x:Name="dtpck_fim" />
+
+                </HorizontalStackLayout>
+
+            </VerticalStackLayout>
+
+        </Frame>
+
+        <Frame Padding="10">
+
+            <VerticalStackLayout Padding="10"
+                                 Spacing="10">
+
+                <Label Text="Informações do Evento"
+                       FontSize="Subtitle"
+                       HorizontalOptions="Center"
+                       TextColor="{StaticResource PrimaryDark}"/>
+
+                <VerticalStackLayout Padding="5"
+                                     Spacing="5">
+
+                    <Label Text="Quantidade de Participantes"/>
+
+                    <Entry Text="{Binding NumeroParticipantes}" 
+                           Placeholder="Número de Participantes" 
+                           Keyboard="Numeric" />
+
+                </VerticalStackLayout>
+                <VerticalStackLayout Padding="5"
+                                     Spacing="5">
+                    
+                    <Label Text="Local do Evento"/>
+
+                    <Entry Text="{Binding Local}" 
+                       Placeholder="Digite o Local do Evento" />
+
+                </VerticalStackLayout>
+                <VerticalStackLayout Padding="5"
+                                     Spacing="5">
+
+                    <Label Text="Custo por Participante"/>
+
+                    <Entry Text="{Binding CustoPorParticipante}" 
+                           Placeholder="Custo por Participante" 
+                           Keyboard="Numeric" />
+
+                </VerticalStackLayout>
+
+            </VerticalStackLayout>
+
+        </Frame>
+
+        <Button Text="Avançar" 
+                Clicked="OnSalvarClicked" />
+        
+    </StackLayout>
+    
+</ContentPage>
